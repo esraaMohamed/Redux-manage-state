@@ -65,7 +65,7 @@ const removeTodoAction = (id) => {
 }
 
 const toggleTodoAction = (id) => {
-  return{
+  return {
     type: TOGGLE_TODO,
     id,
   }
@@ -135,7 +135,7 @@ store.subscribe(() => {
 // dispatching an action (Adding a todo) 
 store.dispatch(addTodoAction({
   id: 0,
-  name: "Learn Redux",
+  name: "Learn React",
   complete: false
 }));
 
@@ -147,15 +147,20 @@ store.dispatch(addTodoAction({
 
 store.dispatch(addTodoAction({
   id: 2,
-  name: "Learn Redux",
+  name: "Learn React native",
+  complete: false
+}));
+
+store.dispatch(addTodoAction({
+  id: 3,
+  name: "Learn Swift",
   complete: false
 }));
 
 // dispatching another action (Removing a todo)
-store.dispatch(removeTodoAction(2));
+store.dispatch(removeTodoAction(3));
 
-store.dispatch(removeTodoAction(1));
-
+// dispatching another action (Toggling a todo)
 store.dispatch(toggleTodoAction(0));
 
 // since the subscribe function returns a function that unsubsribes the listerener we can use it to remove a listener from the store state
